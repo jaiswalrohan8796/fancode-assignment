@@ -41,7 +41,7 @@ module.exports = function (app) {
             next(err);
         }
     });
-
+    
     app.route("/news").get(async (req, res, next) => {
         try {
             let result = await News.getAllNews();
