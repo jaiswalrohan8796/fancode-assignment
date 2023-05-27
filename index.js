@@ -4,6 +4,10 @@ const config = require('./config/config');
 const app = express();
 const port = config.server.port;
 
+//json body parser
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 //Register routes
 helper
     .fileList('./src/routes')

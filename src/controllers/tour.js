@@ -14,7 +14,16 @@ const getMatchesByTourName = async params => {
     return await Tour.getMatchesByTourName(params);
 }
 
+const findCorrespondingTourByMatchId = async matchId => {
+    if(!matchId) {
+        throw new Error("Missing required parameter: matchId")
+    }
+
+    return await Tour.findCorrespondingTourByMatchId(matchId)
+}
+
 module.exports = {
     getAllTours: getAllTours,
-    getMatchesByTourName: getMatchesByTourName
+    getMatchesByTourName: getMatchesByTourName,
+    findCorrespondingTourByMatchId : findCorrespondingTourByMatchId
 }

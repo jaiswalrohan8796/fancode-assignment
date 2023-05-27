@@ -18,7 +18,11 @@ Technical Requirements:
     4. Create an endpoint to fetch news by sport id
 News Model
 {
+    id: number,
     title: string,
-    description: string
+    description: string,
+    matchId: number,
+    tourId: number,
+    sportId: number
 }
 

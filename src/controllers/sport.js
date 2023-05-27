@@ -20,6 +20,14 @@ const getAllSportsToursAndMatches = async () => {
     return res;
 }
 
+const findCorrespondingSportByTourId = async tourId => {
+    if(!tourId) {
+        throw new Error("Missing required parameter: tourId")
+    }
+    return await Sport.findCorrespondingSportByTourId(tourId)
+}
+
 module.exports = {
-    getAllSportsToursAndMatches: getAllSportsToursAndMatches
+    getAllSportsToursAndMatches: getAllSportsToursAndMatches,
+    findCorrespondingSportByTourId: findCorrespondingSportByTourId
 }
