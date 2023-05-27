@@ -2,8 +2,14 @@ Problem 1
 Endpoint /tour/matches returns all the matches for a given tour name.
 The endpoint latency increases linearly with the number of tours. Modify the endpoint to increase the performance.
 
+Solution 1:
+To increase the performance of sql query, we have created index on tour name. This will optimize & increase the query performance on tours table.
+
 Problem 2
 Modify the endpoint /sport/tour/match to also return match's id, startTime and format
+
+Solution 2: 
+Added match id, startTime & format in the SQL query.
 
 Problem 3
 Requirement: News Support for Matches and Tours
@@ -16,6 +22,10 @@ Technical Requirements:
     2. Create an endpoint to fetch news by match id
     3. Create an endpoint to fetch news by tour id
     4. Create an endpoint to fetch news by sport id
+
+Solution 3:
+Create a new table news with the below table definition. One can create news by providing either matchId or tourId. Correspoding Tour/ Sport are automatically fetched & updated.
+
 News Model
 {
     id: number,
